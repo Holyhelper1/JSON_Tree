@@ -1,0 +1,8 @@
+.tree {
+  display: flex;
+  /* flex-wrap: wrap;  */
+  justify-content: center; 
+
+  background-color: rgb(94, 74, 65);
+  width: 800px;
+}

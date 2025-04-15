@@ -1,0 +1,76 @@
+.tree_branches_level_block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.tree_branches_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+  width: 600px;
+  height: 322px;
+  /* background-color: antiquewhite; */
+  box-sizing: border-box;
+  animation: fade-in 0.5s ease-in-out;
+}
+
+.tree_branches_trunk {
+  background-color: rgb(139, 86, 42);
+  height: 320px;
+  width: 25px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+}
+
+.tree_branches_left {
+    margin-top: -10px;
+  /* background-color: rgb(139, 86, 42); */
+  /* padding-inline: 15px; */
+  /* text-align: center; */
+}
+.tree_branches_right {
+  margin-top: 35px;
+  /* background-color: rgb(139, 86, 42); */
+  text-align: center;
+  /* padding-inline: 15px; */
+}
+
+.tree_branches_main {
+  background-color: rgb(139, 86, 42);
+  padding-inline: 15px;
+  /* height: 320px;
+  width: 25px; */
+  /* writing-mode: vertical-rl; */
+  /* transform: rotate(180deg); */
+  text-align: center;
+}
+
+.tree_branches_up {
+  background-color: rgb(21, 97, 25);
+  text-align: center;
+    writing-mode: vertical-rl;
+    padding-inline: 10px;
+    margin-left: 20px;
+    transform: rotate(-34deg);
+}
+
+.tree_branches_down {
+  background-color: rgb(21, 97, 25);
+  text-align: center;
+    writing-mode: vertical-rl;
+    padding-inline: 10px;
+    margin-left: 50px;
+    transform: rotate(44deg);
+}
+
+
+@keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

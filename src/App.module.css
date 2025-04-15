@@ -1,0 +1,19 @@
+.app {
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.title {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px; 
+    background-color: #163d18;
+    color: #d3d3d3;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+}
