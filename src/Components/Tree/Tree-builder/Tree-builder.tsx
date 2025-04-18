@@ -6,7 +6,7 @@ import treeTrunk from "../../assets/tree2/tree-trunk.png";
 // import rightBranch from "../../assets/tree2/right-branch.png";
 import treeTop from "../../assets/tree2/tree-top.png";
 import styles from "./tree-builder.module.css";
-import { testData } from "../../Data/testData";
+import { testData } from "../../../Data/testData";
 import { TreeBranches } from "../Tree-branchs/Tree-branches";
 
 interface TreeData {
@@ -18,8 +18,6 @@ export const TreeBuilder: React.FC = () => {
   const [treeDisplay, setTreeDisplay] = useState<React.ReactNode | null>(null);
 
   // console.log("selectedKey start", selectedKey);
-
-
 
   const trunkFinder = (data: TreeData) => {
     if (
@@ -35,9 +33,9 @@ export const TreeBuilder: React.FC = () => {
     }
 
     if (data[selectedKey]) {
-      const obj: [string, any][] = Object.entries(data[selectedKey]);
+      const JSONTreeData: [string, any][] = Object.entries(data[selectedKey]);
 
-      // console.log("obj", obj);
+      // console.log("JSONdata", JSONTreeData);
 
       return (
         <div className={styles.tree_container}>
@@ -50,10 +48,11 @@ export const TreeBuilder: React.FC = () => {
               height: "150px",
             }}
           >
-            {obj[obj.length - 1][0]}
+            {JSONTreeData[JSONTreeData.length - 1][1]}
           </div>
 
-          <TreeBranches data={obj} />
+          <TreeBranches data={JSONTreeData} />
+          {/* <TreeBranches data={JSONTreeData} /> */}
 
           <div
             className={styles.trunk}
@@ -64,14 +63,14 @@ export const TreeBuilder: React.FC = () => {
               height: "30%",
             }}
           >
-            {obj[0][0]}
+            {/* {JSONTreeData[0][0]} */}
           </div>
-          <pre>{JSON.stringify(obj, null, 2)}</pre>
+          <pre>{JSON.stringify(JSONTreeData, null, 2)}</pre>
         </div>
       );
     } else {
       console.log(`Ключ ${selectedKey} не найден в данных.`);
-      return null; // Возвращаем null, если ключ не найден
+      return null;
     }
   };
 

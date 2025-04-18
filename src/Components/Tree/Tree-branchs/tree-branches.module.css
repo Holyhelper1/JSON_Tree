@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: auto;
 }
 .tree_branches_container {
   display: flex;
@@ -13,6 +14,10 @@
   /* background-color: antiquewhite; */
   box-sizing: border-box;
   animation: fade-in 0.5s ease-in-out;
+}
+
+.tree_branches_plus_level {
+  /* background-color: blueviolet; !!!! */
 }
 
 .tree_branches_trunk {
@@ -52,7 +57,7 @@
   text-align: center;
     writing-mode: vertical-rl;
     padding-inline: 10px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     transform: rotate(-34deg);
 }
 
@@ -61,10 +66,15 @@
   text-align: center;
     writing-mode: vertical-rl;
     padding-inline: 10px;
-    margin-left: 50px;
+    /* margin-left: 50px; */
     transform: rotate(44deg);
 }
 
+
+.tree_branches {
+  display: flex;
+  flex-direction: column-reverse;
+}
 
 @keyframes fade-in {
     from {

@@ -1,0 +1,169 @@
+.graph_builder_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 120px;
+  overflow: hidden;
+  gap: 20px;
+}
+.title {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px; 
+    background-color: #163d18;
+    color: #d3d3d3;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+
+.custom_select {
+  position: relative;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.selected {
+  padding: 10px 15px;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  transition: ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.selected:hover {
+  /* border-color: #007bff;  */
+  box-shadow: 0 0 5px #0cc94b;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+  background-color: #3a3a3a;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  max-height: 200px; /* Ограничение по высоте выпадающего списка */
+  overflow-y: auto; /* Прокрутка при превышении высоты */
+  z-index: 10; /* Убедитесь, что список поверх других элементов */
+  animation: fade-in 0.5s ease-in-out;
+  display: none;
+}
+
+.custom_select:hover .options {
+  display: block; /* Показа списка при наведении на кастомный селектор */
+}
+
+.option {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.option:hover {
+  color: #141414;
+  background-color: #f0f0f0;
+}
+
+.graph_container {
+  background: url("/src/assets/icons/square-svgrepo-com.svg") fixed;
+  background-color: #141414;
+  background-size: 20px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  /* width: 900px;
+  height: 600px; */
+  padding: 120px;
+  align-items: center;
+}
+
+.graph_list_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  animation: fade-in 0.5s ease-in-out;
+}
+
+.graph_list_item {
+  display: flex;
+  flex-direction: column;
+  background-color: #292929;
+  border: 1px solid #444444;
+  border-radius: 10px;
+  animation: fade-in 0.5s ease-in-out;
+}
+.graph_list_item span {
+  color: #59b8ff;
+}
+
+.graph_list_item_text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #d3d3d3;
+  /* border-bottom: 1px solid #383838; */
+  padding: 10px;
+  text-align: center;
+  gap: 5px;
+}
+
+.graph_list_item_text:not(:last-child) {
+  border-bottom: 1px solid #383838;
+}
+
+/* .graph_list_item_description {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #d3d3d3;
+  border-radius: 20px;
+  padding: 10px;
+  gap: 5px;
+  text-align: center;
+} */
+
+
+.reagents_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  /* background-color: #292929;
+  border: 1px solid #444444; */
+  border-radius: 10px;
+  animation: fade-in 0.5s ease-in-out;
+}
+
+.reagents_list span{
+  color: #59b8ff;
+}
+
+.reagent_item {
+    display: flex;
+    flex-direction: row;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

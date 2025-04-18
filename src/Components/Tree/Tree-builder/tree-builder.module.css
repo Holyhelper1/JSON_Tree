@@ -1,0 +1,107 @@
+.selector {
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.empty_tree {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fade-in 0.5s ease-in-out;
+}
+
+.tree_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* width: 100vw; */
+  animation: fade-in 0.5s ease-in-out;
+  /* background-color: rgb(21, 102, 64); */
+  /* background-color: rgb(102, 64, 21); */
+  box-sizing: border-box;
+}
+
+.tree_builder_container {
+  background-color: #242424;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #d3d3d3;
+  font-family: "Roboto", sans-serif;
+
+  animation: fade-in 0.5s ease-in-out;
+}
+.tree_name {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.tree_top {  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 6%;
+  /* height: auto; */
+  margin-right: 2rem;
+}
+
+.tree_connector {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 40%;
+  margin-right: 1.2rem;
+}
+
+.left_branch {
+  width: 30%;
+
+  /* transform: rotate(-90deg); */
+}
+
+.right_branch {
+  width: 30%;
+}
+
+.trunk {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 6%;
+  /* height: auto; */
+  text-align: center;
+  writing-mode: vertical-rl;
+  margin-left: 25px;
+  /* margin-left: 42px; */
+
+ 
+  /* text-transform: rotate(180deg); */
+  /* transform: rotate(180deg); */
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* @keyframes fly {
+  0% {
+    transform: translateX(-100px) translateY(-100px) scale(0.5);
+  }
+  100% {
+    transform: translateX(110dvw) translateY(-300px) scale(2.2);
+  }
+} */
