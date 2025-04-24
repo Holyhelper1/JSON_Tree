@@ -71,7 +71,9 @@ export const TreeBranches: React.FC<TreeNodeProps> = ({ data }) => {
     );
   }
 
-  const brunchFinder = (data: any, level: number = 0) => {
+  const brunchFinder = (data: any, 
+    // level: number = 0
+  ) => {
     if (Array.isArray(data)) {
       return data.map((item: any, index: number) => {
         const [title, branches] = item;

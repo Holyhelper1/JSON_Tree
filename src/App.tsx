@@ -6,11 +6,15 @@ import { GraphBuilder } from "./Components/JSON-Graphs/Graph-builder";
 
 const App = () => {
   return (
+    <>
+    
     <div className={styles.app}>
       {/* <h1 className={styles.title}>JSON Дерево</h1> */}
       {/* <TreeBuilder  />       */}
       <GraphBuilder />
+
     </div>
+    </>
   );
 };
 

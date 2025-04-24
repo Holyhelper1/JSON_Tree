@@ -1,3 +1,4 @@
+
 .graph_builder_container {
   display: flex;
   flex-direction: column;
@@ -7,15 +8,25 @@
   overflow: hidden;
   gap: 20px;
 }
+
 .title {
-    margin-bottom: 20px;
-    padding: 10px;
-    font-size: 16px; 
-    background-color: #163d18;
-    color: #d3d3d3;
-    border-radius: 20px;
-    width: 300px;
-    text-align: center;
+  margin-bottom: 32px;
+  padding: 12px 24px;
+  font-size: 24px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #1f4037, #99f2c8);
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: fit-content;
+  text-align: center;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  transition: transform 0.2s ease;
+}
+
+.title:hover {
+  transform: scale(1.03);
+  cursor: default;
 }
 
 
@@ -27,7 +38,6 @@
 
 .selected {
   padding: 10px 15px;
-  /* border: 1px solid #ccc; */
   border-radius: 5px;
   background-color: #fff;
   cursor: pointer;
@@ -37,9 +47,7 @@
 }
 
 .selected:hover {
-  /* border-color: #007bff;  */
   box-shadow: 0 0 5px #0cc94b;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .options {
@@ -47,21 +55,20 @@
   top: 100%;
   left: 0;
   right: 0;
-  /* border: 1px solid #ccc; */
   border-radius: 5px;
   background-color: #3a3a3a;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  max-height: 200px; /* Ограничение по высоте выпадающего списка */
-  overflow-y: auto; /* Прокрутка при превышении высоты */
-  z-index: 10; /* Убедитесь, что список поверх других элементов */
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
   animation: fade-in 0.5s ease-in-out;
   display: none;
 }
 
 .custom_select:hover .options {
-  display: block; /* Показа списка при наведении на кастомный селектор */
+  display: block;
 }
 
 .option {
@@ -72,10 +79,11 @@
 
 .option:hover {
   color: #141414;
-  background-color: #f0f0f0;
+  background-color: #59b8ff;
 }
 
 .graph_container {
+  position: relative;
   background: url("/src/assets/icons/square-svgrepo-com.svg") fixed;
   background-color: #141414;
   background-size: 20px 20px;
@@ -83,10 +91,20 @@
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  /* width: 900px;
-  height: 600px; */
+  height: 70vh;
   padding: 120px;
+  overflow: hidden;
   align-items: center;
+}
+
+.graph_container svg {
+  z-index: 1;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .graph_list_container {
@@ -95,7 +113,16 @@
   justify-content: center;
   align-items: center;
   gap: 8rem;
+  cursor: grab;
   animation: fade-in 0.5s ease-in-out;
+  transition: transform 0.1s;
+  position: relative;
+  z-index: 2;
+  user-select: none;
+}
+
+.graph_list_container:active {
+  cursor: grabbing;
 }
 
 .graph_list_item {
@@ -105,8 +132,34 @@
   border: 1px solid #444444;
   border-radius: 10px;
   animation: fade-in 0.5s ease-in-out;
+  padding: 10px;
+  transition: box-shadow 0.3s ease-in-out;
 }
+
+.graph_list_item:hover {
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
 .graph_list_item span {
+  color: #59b8ff;
+}
+
+.graph_list_child_item {
+  display: flex;
+  flex-direction: column;
+  background-color: #292929;
+  border: 1px solid #444444;
+  border-radius: 10px;
+  animation: fade-in 0.5s ease-in-out;
+  padding: 10px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.graph_list_child_item:hover {
+  box-shadow: 0 0 10px rgba(0, 255, 234, 0.5);
+}
+
+.graph_list_child_item span {
   color: #59b8ff;
 }
 
@@ -116,7 +169,6 @@
   justify-content: center;
   align-items: center;
   color: #d3d3d3;
-  /* border-bottom: 1px solid #383838; */
   padding: 10px;
   text-align: center;
   gap: 5px;
@@ -126,44 +178,128 @@
   border-bottom: 1px solid #383838;
 }
 
-/* .graph_list_item_description {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  color: #d3d3d3;
-  border-radius: 20px;
-  padding: 10px;
-  gap: 5px;
-  text-align: center;
-} */
-
-
 .reagents_list {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  /* background-color: #292929;
-  border: 1px solid #444444; */
   border-radius: 10px;
   animation: fade-in 0.5s ease-in-out;
 }
 
-.reagents_list span{
+.reagents_list span {
   color: #59b8ff;
 }
 
 .reagent_item {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
+
+.svg-path {
+  stroke: rgb(68, 68, 68);
+  stroke-width: 1.5;
+  fill: none;
+  marker-end: url(#end-arrow);
+  transition: stroke 0.3s ease;
+}
+
+.svg-path:hover {
+  stroke: #0cc94b;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+@media (max-width: 1440px) {
+  .graph_builder_container {
+    padding: 100px;
+  }
+  .title {
+    font-size: 14px;
+    width: 280px;
+  }
+  .graph_container {
+    padding: 100px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .graph_builder_container {
+    padding: 80px;
+  }
+  .title {
+    font-size: 14px;
+    width: 250px;
+  }
+  .graph_list_container {
+    gap: 5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .graph_builder_container {
+    padding: 60px;
+  }
+  .title {
+    font-size: 12px;
+    width: 240px;
+  }
+  .graph_list_container {
+    gap: 3rem;
+  }
+  .custom_select {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .graph_builder_container {
+    padding: 40px;
+  }
+  .title {
+    font-size: 12px;
+    width: 100%;
+  }
+  .graph_list_container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .graph_list_item {
+    width: 90%;
+  }
+}
+
+@media (max-width: 460px) {
+  .title {
+    font-size: 10px;
+    width: 100%;
+  }
+  .graph_list_container {
+    gap: 1rem;
+  }
+  .graph_list_item {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 360px) {
+  .title {
+    font-size: 10px;
+    width: 100%;
+  }
+  .custom_select {
+    font-size: 12px;
+  }
+  .option {
+    padding: 8px;
+    font-size: 12px;
   }
 }

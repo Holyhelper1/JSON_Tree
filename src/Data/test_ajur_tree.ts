@@ -1,4 +1,6 @@
-{
+
+
+export const newTestData = {
   "name": "Реестр исследований",
   "items": [
     {
@@ -17,6 +19,14 @@
           "reagentPurity": "чистый",
           "volume": 5,
           "reagentUnit": "мл"
+        },
+        {
+          "id": 457,
+          "table": "reagents",
+          "name": "Ирридиий",
+          "reagentPurity": "чистый",
+          "volume": 12.3,
+          "reagentUnit": "гр"
         },
         {
           "id": 99,
